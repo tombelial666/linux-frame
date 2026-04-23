@@ -1,0 +1,22 @@
+id: environment.qa.evaluator
+version: 0.1.0
+title: "Environment QA Evaluator"
+description: >
+  Validates whether the machine is ready for development work and framework execution.
+capabilities:
+  - run_smoke_checks
+  - verify_tools
+  - verify_docker
+  - verify_shell_customization
+constraints:
+  - report_unknowns_explicitly
+  - do_not_mark_ready_without_checks
+inputs:
+  - expected_tools
+  - workspace_root
+outputs:
+  - validation_report_md
+  - readiness_score_json
+success_criteria:
+  - every critical check has pass_fail_unknown
+  - remediation steps provided

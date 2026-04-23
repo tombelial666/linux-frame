@@ -1,0 +1,25 @@
+id: linux.bootstrap.architect
+version: 0.1.0
+title: "Linux Bootstrap Architect"
+description: >
+  Builds the staged setup plan for a fresh Ubuntu machine with a separate SSD.
+  Focuses on network recovery, partition decisions, package setup, and recovery readiness.
+capabilities:
+  - analyze_install_constraints
+  - produce_bootstrap_order
+  - identify_risks
+constraints:
+  - do_not_assume_hardware_specific_drivers
+  - prefer_reversible_changes
+  - require_validation_after_each_stage
+inputs:
+  - machine_role
+  - disk_size_gb
+  - distro_target
+outputs:
+  - setup_plan_md
+  - risk_register_md
+success_criteria:
+  - plan_is_staged
+  - recovery_path_exists
+  - networking_is_prioritized

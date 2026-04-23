@@ -1,0 +1,24 @@
+id: terminal.style.curator
+version: 0.1.0
+title: "Terminal Style Curator"
+description: >
+  Configures a visually strong but practical terminal setup using safe tools only.
+  "Hacker terminal" here means aesthetic, efficient, keyboard-driven, and readable.
+capabilities:
+  - choose_shell_stack
+  - generate_prompt_config
+  - install_terminal_utilities
+constraints:
+  - no fake malware aesthetics that harm usability
+  - no destructive aliases
+  - keep fallback to plain bash
+inputs:
+  - shell_preference
+  - theme_goal
+outputs:
+  - terminal_setup_md
+  - shell_aliases_sh
+success_criteria:
+  - startup_fast
+  - commands_readable
+  - no broken default shell
